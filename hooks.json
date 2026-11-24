@@ -1,0 +1,66 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"import json,os,sys,time; e=json.load(sys.stdin); r=e.get('tool_response'); 'tool_response' in e and e.update(tool_response={'success': r.get('success') if isinstance(r, dict) else None}); open(os.path.expanduser('~/devin-plugin-hook-events.jsonl'), 'a').write('%.6f plugin %s %s\\n' % (time.time(), os.getcwd(), json.dumps(e)))\" 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"import json,os,sys,time; e=json.load(sys.stdin); r=e.get('tool_response'); 'tool_response' in e and e.update(tool_response={'success': r.get('success') if isinstance(r, dict) else None}); open(os.path.expanduser('~/devin-plugin-hook-events.jsonl'), 'a').write('%.6f plugin %s %s\\n' % (time.time(), os.getcwd(), json.dumps(e)))\" 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"import json,os,sys,time; e=json.load(sys.stdin); r=e.get('tool_response'); 'tool_response' in e and e.update(tool_response={'success': r.get('success') if isinstance(r, dict) else None}); open(os.path.expanduser('~/devin-plugin-hook-events.jsonl'), 'a').write('%.6f plugin %s %s\\n' % (time.time(), os.getcwd(), json.dumps(e)))\" 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"import json,os,sys,time; e=json.load(sys.stdin); r=e.get('tool_response'); 'tool_response' in e and e.update(tool_response={'success': r.get('success') if isinstance(r, dict) else None}); open(os.path.expanduser('~/devin-plugin-hook-events.jsonl'), 'a').write('%.6f plugin %s %s\\n' % (time.time(), os.getcwd(), json.dumps(e)))\" 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"import json,os,sys,time; e=json.load(sys.stdin); r=e.get('tool_response'); 'tool_response' in e and e.update(tool_response={'success': r.get('success') if isinstance(r, dict) else None}); open(os.path.expanduser('~/devin-plugin-hook-events.jsonl'), 'a').write('%.6f plugin %s %s\\n' % (time.time(), os.getcwd(), json.dumps(e)))\" 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "PostCompaction": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"import json,os,sys,time; e=json.load(sys.stdin); r=e.get('tool_response'); 'tool_response' in e and e.update(tool_response={'success': r.get('success') if isinstance(r, dict) else None}); open(os.path.expanduser('~/devin-plugin-hook-events.jsonl'), 'a').write('%.6f plugin %s %s\\n' % (time.time(), os.getcwd(), json.dumps(e)))\" 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
+  }
+}
