@@ -1,0 +1,5 @@
+{
+  "name": "darting-hook-timing",
+  "version": "0.2.0",
+  "description": "Appends a timestamped line per hook event to ~/devin-plugin-hook-events.jsonl"
+}
